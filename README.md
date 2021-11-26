@@ -24,3 +24,43 @@ To use Blamer, you'll need additional libraries. You can install them by typing 
 
 # Usage
 You can type `python3 blamer.py -h` in order to get help about how to use Blamer. 
+
+Here is an example of what you can do with Blamer:
+
+```
+// This is a comment
+int var = 0;
+
+/* This is a multiline comment */
+for(int i = 0; i < 10; ++i){
+    var += i;
+}
+
+/*
+What about this comment ?
+*/
+
+/*
+    What about that one
+*/
+```
+
+After running `python3 blamer.py -i someFile.cpp -o myResult.cpp -d ru` all comments will be translated to russian and the result is:
+
+```
+// Это комментарий
+int var = 0;
+
+/ * Это многострочный комментарий * /
+for(int i = 0; i < 10; ++i){
+    var += i;
+}
+
+/ *
+Что насчет этого комментария?
+* /
+
+/ *
+    Как насчет того
+* /
+```

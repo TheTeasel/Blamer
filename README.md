@@ -25,8 +25,7 @@ To use Blamer, you'll need additional libraries. You can install them by typing 
 # Usage
 You can type `python3 blamer.py -h` in order to get help about how to use Blamer. 
 
-Here is an example of what you can do with Blamer:
-
+To show you a concrete example of what you can do with Blamer, let's take this initial piece of code:
 ```
 // This is a comment
 int var = 0;

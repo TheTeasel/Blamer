@@ -35,7 +35,4 @@ parser.add_argument("-d", "--destination",
 
 args = parser.parse_args()
 
-#print("input: " + args.input)
-#print("output: " + args.output)
-#print("destination: " + args.destination)
 translate(args.input, args.output, args.destination)

@@ -13,7 +13,7 @@
 <hr>
 
 # Roadmap
-* Configuration of other characters to define comments. For example, `#` and `"""..."""` for Python code.
+* Configuration of other characters to define comments. For example, `#` and `"""` for Python code.
 * Anonymous running of Blamer by using Tor.
 
 # What is Blamer?

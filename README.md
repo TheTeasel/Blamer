@@ -12,10 +12,6 @@
 
 <hr>
 
-# Roadmap
-* Configuration of other characters to define comments. For example, `#` and `"""` for Python code.
-* Anonymous running of Blamer by using Tor.
-
 # What is Blamer?
 Blamer is a tool written in Python that translates all comments in a code file into the desired language. Blamer uses the Google Translate library to translate comments.
 
@@ -23,8 +19,14 @@ For the moment, Blamer only detects comments starting with `//` or multi-line co
 
 With Blamer you can release your malware into the wild while blaming another country. Why? Because it's cool.
 
+# Roadmap
+* Configuration of other characters to define comments. For example, `#` and `"""` for Python code.
+* Anonymous running of Blamer by using Tor.
+
+
 # Requirements
 To use Blamer, you'll need additional libraries. You can install them by typing `pip3 install requirements.txt`.
+
 
 # Usage
 You can type `python3 blamer.py -h` in order to get help about how to use Blamer. 

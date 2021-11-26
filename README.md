@@ -22,6 +22,7 @@ With Blamer you can release your malware into the wild while blaming another cou
 # Roadmap
 * Configuration of other characters to define comments. For example, `#` and `"""` for Python code.
 * Anonymous running of Blamer by using Tor.
+* Enable possibility to give a whole directory to translate and not only a single file.
 
 
 # Requirements

@@ -15,7 +15,7 @@
 # What is Blamer?
 Blamer is a tool written in Python that translates all comments in a code file into the desired language. Blamer uses the Google Translate library to translate comments.
 
-For the moment, Blamer only detects comments starting with // or multi-line comments surrounded by /* and */ but it is planned for future versions to add other parameters.
+For the moment, Blamer only detects comments starting with `//` or multi-line comments surrounded by `/*` and `*/` but it is planned for future versions to add other parameters.
 
 With Blamer you can release your malware into the wild while blaming another country. Why? Because it's cool.
 

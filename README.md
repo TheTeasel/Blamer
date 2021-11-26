@@ -12,6 +12,10 @@
 
 <hr>
 
+# Roadmap
+* Configuration of other characters to define comments. For example, `#` and `"""..."""` for Python code.
+* Anonymous running of Blamer by using Tor.
+
 # What is Blamer?
 Blamer is a tool written in Python that translates all comments in a code file into the desired language. Blamer uses the Google Translate library to translate comments.
 

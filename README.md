@@ -21,3 +21,6 @@ With Blamer you can release your malware into the wild while blaming another cou
 
 # Requirements
 To use Blamer, you'll need additional libraries. You can install them by typing `pip3 install requirements.txt`.
+
+# Usage
+You can type `python3 blamer.py -h` in order to get help about how to use Blamer. 

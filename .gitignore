@@ -1,3 +1,5 @@
 outputs/
 examples/
 __pycache__/
+anonymize.sh
+de-anonymize.sh

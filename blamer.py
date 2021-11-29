@@ -17,19 +17,21 @@ print(header)
 
 parser = argparse.ArgumentParser(description="Control script for Blamer."
                                             + " Use one of the following option.",
-                                 epilog="Example usage: python3 " + sys.argv[0] + " -i myFile.cpp -o myFileTranslated.cpp -d \"fr\"")
+                                 epilog="Example usage: python3 " + sys.argv[0] + " -i myFile.cpp -o myFileTranslated.cpp -l ru")
 
-parser.add_argument("-i", "--input",
+required_args = parser.add_argument_group("required arguments")
+
+required_args.add_argument("-i", "--input",
                     help="Input file",
                     dest="input",
                     required=True)
                     
-parser.add_argument("-o", "--output",
+required_args.add_argument("-o", "--output",
                     help="Output file",
                     dest="output",
                     required=True)
 
-parser.add_argument("-l", "--language",
+required_args.add_argument("-l", "--language",
                     help="Destination language",
                     dest="language",
                     required=True)

@@ -1,11 +1,11 @@
+import yaml
 import re
-import os.path
+import os
 from googletrans import Translator
 from modules.logging import printMessage
 
 translator = Translator()
 dest_lang = 'ru'
-comment_re = re.compile(r'(^)?[^\S\n]*/(?:\*(.*?)\*/[^\S\n]*|/[^\n]*)($)?', re.DOTALL | re.MULTILINE)
 
 # Translate a given match (regex)
 def comment_replacer(match):
@@ -23,9 +23,20 @@ def comment_replacer(match):
         # multi line comment without line break
         return ' '
 
-# Get all the matches (regex) and translate them
-def translate_comments(text):
-    return comment_re.sub(comment_replacer, text)
+# Return the regex depending on the extension
+def getRegex(extension):
+    regex = ""
+
+    with open("config/regex.yaml", "r") as file:
+        documents = yaml.full_load(file)
+
+        for key, value in documents.items():
+            if key=="default":
+                regex = value
+            if key==extension:
+                regex = value
+        
+        return regex
 
 # Translate a whole file
 def translate(input, output, lang):
@@ -47,7 +58,9 @@ def translate(input, output, lang):
             # Translate and write to destination file
             with open(output, "w+") as dstFile:
                 try:
-                    dstFile.write(translate_comments(srcContent))
+                    filename, file_extension = os.path.splitext(input)
+                    comment_re = re.compile(getRegex(file_extension), re.DOTALL | re.MULTILINE)
+                    dstFile.write(comment_re.sub(comment_replacer, srcContent))
                 
                 except Exception as e:
                     printMessage("error", str(e))

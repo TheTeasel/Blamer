@@ -1,3 +1,11 @@
 # This is the list of regex to extract comments in different languages
-default: '(^)?[^\S\n]*\/(?:\*(.*?)\*\/[^\S\n]*|\/[^\n]*)($)?'
-.py: '(^)?[^\S\n]*[#\"](?:\"\"(.*?)\"\"\"[^\S\n]*|[^\n]*)($)?'
+
+# The default config is defined like:
+# Multi-line comments are located between /* and */
+# Single-line comments start with //
+default:  '(^)?[^\S\n]*\/(?:\*(.*?)\*\/[^\S\n]*|\/[^\n]*)($)?'
+
+# The python config is defined like:
+# Multi-line comments are located between """ and """
+# Single-line comments start with #
+.py:      '(^)?[^\S\n]*[#\"](?:\"\"(.*?)\"\"\"[^\S\n]*|[^\n]*)($)?'

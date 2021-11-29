@@ -1,5 +1,4 @@
 import argparse
-import sys
 from colorama import Fore, Style
 from modules.translate import translate
 from modules.tor import check_tor
@@ -42,7 +41,7 @@ args = parser.parse_args()
 printMessage("debug", "Check anonymity before scraping...")
 
 if not check_tor():
-        printMessage("warning", "Blamer uses Google Translate's API in order to translate the comments."\
+        printMessage("debug", "Blamer uses Google Translate's API in order to translate the comments."\
                 " To anonymously translate your files, we strongly recommend using Tor.")
         
         # Ask users to continue or stop
@@ -53,6 +52,8 @@ if not check_tor():
 
         if answer=='n':
                 exit(1)
+        else:
+                printMessage("warning", "Running Blamer non-anonymously")
 else:
         printMessage("success", "Tor check successful!")
 

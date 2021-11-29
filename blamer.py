@@ -41,13 +41,12 @@ args = parser.parse_args()
 printMessage("debug", "Check anonymity before scraping...")
 
 if not check_tor():
-        printMessage("debug", "Blamer uses Google Translate's API in order to translate the comments."\
-                " To anonymously translate your files, we strongly recommend using Tor.")
+        printMessage("warning", "Tor is not installed on the machine!")
         
         # Ask users to continue or stop
         answer = ''
         while not (answer=='y' or answer=='n'):
-                answer = input(Fore.RED + "You're not anonymous! Continue anyways? [y/n]: "
+                answer = input(Fore.YELLOW + "You're not anonymous! Continue anyways? [y/n]: "
                                 + Style.RESET_ALL)
 
         if answer=='n':

@@ -1,9 +1,6 @@
 from colorama import Fore, Style
 from datetime import datetime
 
-def getDate():
-        return datetime.today().strftime('%Y-%m-%d')
-
 def printMessage(level, message):
     if level == "debug": 
         print(Fore.WHITE 

@@ -15,24 +15,23 @@ __________.__
 
 print(header)
 
-parser = argparse.ArgumentParser(description="Control script for Blamer."
-                                            + " Use one of the following option.",
-                                 epilog="Example usage: python3 " + sys.argv[0] + " -i myFile.cpp -o myFileTranslated.cpp -l ru")
+parser = argparse.ArgumentParser(description= Fore.YELLOW + "Control script for Blamer."
+                                                + Style.RESET_ALL)
 
 required_args = parser.add_argument_group("required arguments")
 
 required_args.add_argument("-i", "--input",
-                    help="Input file",
+                    help="This is the file in which Blamer is going to search for comments to translate",
                     dest="input",
                     required=True)
                     
 required_args.add_argument("-o", "--output",
-                    help="Output file",
+                    help="This is the result file. If it doesn't exists then Blamer will create it for you",
                     dest="output",
                     required=True)
 
 required_args.add_argument("-l", "--language",
-                    help="Destination language",
+                    help="The language in which to translate the comments",
                     dest="language",
                     required=True)
 

@@ -22,17 +22,17 @@ parser = argparse.ArgumentParser(description= Fore.YELLOW + "Control script for 
 required_args = parser.add_argument_group("required arguments")
 
 required_args.add_argument("-i", "--input",
-                    help="This is the file in which Blamer is going to search for comments to translate",
+                    help="file in which Blamer is going to search for comments to translate",
                     dest="input",
                     required=True)
                     
 required_args.add_argument("-o", "--output",
-                    help="This is the result file. If it doesn't exists then Blamer will create it for you",
+                    help="result file in which Blamer will write the result",
                     dest="output",
                     required=True)
 
 required_args.add_argument("-l", "--language",
-                    help="The language in which to translate the comments",
+                    help="language in which to translate the comments",
                     dest="language",
                     required=True)
 

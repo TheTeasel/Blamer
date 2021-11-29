@@ -20,41 +20,49 @@ parser = argparse.ArgumentParser(description= Fore.YELLOW + "Control script for 
 
 required_args = parser.add_argument_group("required arguments")
 
+parser.add_argument("-it", "--ignoreTor",
+                        help="ignore the tor warning message",
+                        action="store_true")
+
 required_args.add_argument("-i", "--input",
-                    help="file in which Blamer is going to search for comments to translate",
-                    dest="input",
-                    required=True)
+                        help="file in which Blamer is going to search for comments to translate",
+                        dest="input",
+                        required=True)
                     
 required_args.add_argument("-o", "--output",
-                    help="result file in which Blamer will write the result",
-                    dest="output",
-                    required=True)
+                        help="result file in which Blamer will write the result",
+                        dest="output",
+                        required=True)
 
 required_args.add_argument("-l", "--language",
-                    help="language in which to translate the comments",
-                    dest="language",
-                    required=True)
+                        help="language in which to translate the comments",
+                        dest="language",
+                        required=True)
 
 args = parser.parse_args()
 
-# Checking anonymity
-printMessage("debug", "Check anonymity before scraping...")
-
-if not check_tor():
-        printMessage("warning", "Tor is not installed on the machine!")
+# Ignore Tor message by using --ignoreTor parameter
+if not args.ignoreTor:
+        # Checking anonymity
+        printMessage("debug", "Check anonymity before scraping...")
         
-        # Ask users to continue or stop
-        answer = ''
-        while not (answer=='y' or answer=='n'):
-                answer = input(Fore.YELLOW + "You're not anonymous! Continue anyways? [y/n]: "
-                                + Style.RESET_ALL)
+        if not check_tor():
+                printMessage("warning", "Tor is not installed on the machine!")
+                
+                # Ask users to continue or stop
+                answer = ''
+                while not (answer=='y' or answer=='n'):
+                        answer = input(Fore.YELLOW + "You're not anonymous! Continue anyways? [y/n]: "
+                                        + Style.RESET_ALL)
 
-        if answer=='n':
-                exit(1)
+                if answer=='n':
+                        exit(1)
+                else:
+                        printMessage("warning", "Running Blamer non-anonymously")
         else:
-                printMessage("warning", "Running Blamer non-anonymously")
+                printMessage("success", "Tor check successful!")
 else:
-        printMessage("success", "Tor check successful!")
+        printMessage("debug", "Skipping anonymity check...")
 
 # Translating
 printMessage("debug", "Starting translation...")

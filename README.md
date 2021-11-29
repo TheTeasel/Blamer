@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  Blamer is a tool designed to translate all comments in your code in order to blame someone else.
+  Blamer is a tool designed to translate all comments in your code in order to blame someone else for your malicious scripts.
 </p>
 
 <p align="center">

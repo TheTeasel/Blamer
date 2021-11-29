@@ -69,6 +69,8 @@ for(int i = 0; i < 10; ++i){
 * /
 ```
 
+You can find a list of all supported languages there: https://github.com/TheTeasel/Blamer/wiki/Supported-languages
+
 
 # Configuration
 Blamer is shipped with a configuration file to help during comment extraction. This file contains the regex that will be used to extract comments for specified files extensions. By default, Blamer is expecting multi-line comments to start with `/*` and to end with `*/` and single-line comments to start with `//`. There is, however, another configuration for Python files to use `'''` for multi-line comments and `#` for single-line comments.

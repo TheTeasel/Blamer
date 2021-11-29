@@ -91,3 +91,7 @@ default:  '(^)?[^\S\n]*\/(?:\*(.*?)\*\/[^\S\n]*|\/[^\n]*)($)?'
 ```
 
 To add a new file type to the configuration, you can add it to the file by giving it's extension as the key (as shown above with `.py`).
+
+<hr>
+
+<p align="center"> Made with ♥️ by Teasel</p>

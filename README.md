@@ -87,3 +87,5 @@ default:  '(^)?[^\S\n]*\/(?:\*(.*?)\*\/[^\S\n]*|\/[^\n]*)($)?'
 # Single-line comments start with #
 .py:      '(^)?[^\S\n]*[#\"](?:\"\"(.*?)\"\"\"[^\S\n]*|[^\n]*)($)?'
 ```
+
+To add a new file type to the configuration, you can add it to the file by giving it's extension as the key (as shown above with `.py`).

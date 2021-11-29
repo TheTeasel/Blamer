@@ -23,20 +23,26 @@ def comment_replacer(match):
         # multi line comment without line break
         return ' '
 
-# Return the regex depending on the extension
+# Return the regex (to extract the comments) based on the extension
 def getRegex(extension):
     regex = ""
 
-    with open("config/regex.yaml", "r") as file:
-        documents = yaml.full_load(file)
+    with open("config/regex.yaml", "r") as configFile:
+        try:
+            documents = yaml.full_load(configFile)
 
-        for key, value in documents.items():
-            if key=="default":
-                regex = value
-            if key==extension:
-                regex = value
-        
-        return regex
+            for key, value in documents.items():
+                if key=="default":
+                    regex = value
+                if key==extension:
+                    regex = value
+            
+            return regex
+
+        except Exception as e:
+            printMessage("error", str(e))
+        finally:
+            configFile.close()
 
 # Translate a whole file
 def translate(input, output, lang):

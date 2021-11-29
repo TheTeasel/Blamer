@@ -1,6 +1,7 @@
 import re
 import os.path
 from googletrans import Translator
+from modules.logging import printMessage
 
 translator = Translator()
 dest_lang = 'ru'
@@ -30,7 +31,7 @@ def translate_comments(text):
 def translate(input, output, lang):
     # Check if the input is correct
     if not os.path.isfile(input):
-        print("Input doesn't exists")
+        printMessage("error", "The input file couldn't be loaded. Please make sure it exists and is not a directory.")
         exit(1)
 
     # Destination language
@@ -49,11 +50,11 @@ def translate(input, output, lang):
                     dstFile.write(translate_comments(srcContent))
                 
                 except Exception as e:
-                    print(str(e))
+                    printMessage("error", str(e))
                 finally:
                     dstFile.close()
         
         except Exception as e:
-            print(str(e))
+            printMessage("error", str(e))
         finally:
             srcFile.close()

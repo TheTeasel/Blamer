@@ -1,8 +1,7 @@
 import simplejson
-import urllib3
 import requests
 
-def init_tor():
+def check_tor():
     # Verify Tor
     ip = simplejson.loads(requests.get('https://api.ipify.org/?format=json').text)['ip']
     tor = requests.get('https://check.torproject.org/exit-addresses', stream=True)

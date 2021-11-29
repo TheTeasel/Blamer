@@ -2,7 +2,7 @@ import argparse
 import sys
 from colorama import Fore, Style
 from translate import translate
-from tor import init_tor
+from tor import check_tor
 
 header = Fore.YELLOW + """
 __________.__                               
@@ -34,20 +34,25 @@ parser.add_argument("-l", "--language",
                     dest="language",
                     required=True)
 
-parser.add_argument("-a", "--anonymous",
-                    help="Anonymous translation using Tor",
-                    action="store_true")
-
 args = parser.parse_args()
 
-if args.anonymous:
-        print("Check anonymity before scraping...")
+# Checking anonymity
+print("Check anonymity before scraping...")
+
+if not check_tor():
+        print(Fore.RED + "Blamer uses Google Translate's API in order to translate the comments."\
+                "\nTo anonymously translate your files, we strongly recommend using Tor."
+                + Style.RESET_ALL)
         
-        if not init_tor():
-                print("Tor check failed!")
+        # Ask users to continue or stop
+        answer = ''
+        while not (answer=='y' or answer=='n'):
+                answer = input("You're not anonymous! Continue anyways? [y/n]: ")
+
+        if answer=='n':
                 exit(1)
-        else:
-                print("Tor check successful!")
+else:
+        print("Tor check successful!")
 
-
+# Translating
 translate(args.input, args.output, args.language)

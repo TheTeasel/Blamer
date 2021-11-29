@@ -12,12 +12,12 @@
 
 <hr>
 
+
 # What is Blamer?
 Blamer is a tool written in Python that translates all comments in a code file into the desired language. Blamer uses the Google Translate library to translate comments.
 
-For the moment, Blamer only detects comments starting with `//` or multi-line comments surrounded by `/*` and `*/` but it is planned for future versions to add other parameters.
-
 With Blamer you can release your malware into the wild while blaming another country. Why? Because it's cool.
+
 
 # Roadmap
 * Configuration of other characters to define comments. For example, `#` and `"""` for Python code.
@@ -67,4 +67,23 @@ for(int i = 0; i < 10; ++i){
 / *
     Как насчет того
 * /
+```
+
+
+# Configuration
+Blamer is shipped with a configuration file to help during comment extraction. This file contains the regex that will be used to extract comments for specified files extensions. By default, Blamer is expecting multi-line comments to start with `/*` and to end with `*/` and single-line comments to start with `//`. There is, however, another configuration for Python files to use `'''` for multi-line comments and `#` for single-line comments.
+
+This is a preview of the default configuration:
+```yaml
+# This is the list of regex to extract comments in different languages
+
+# The default config is defined like:
+# Multi-line comments are located between /* and */
+# Single-line comments start with //
+default:  '(^)?[^\S\n]*\/(?:\*(.*?)\*\/[^\S\n]*|\/[^\n]*)($)?'
+
+# The python config is defined like:
+# Multi-line comments are located between """ and """
+# Single-line comments start with #
+.py:      '(^)?[^\S\n]*[#\"](?:\"\"(.*?)\"\"\"[^\S\n]*|[^\n]*)($)?'
 ```

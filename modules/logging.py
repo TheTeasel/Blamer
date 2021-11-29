@@ -23,3 +23,9 @@ def printMessage(level, message):
             + " [ERROR] " 
             + str(message) 
             + Style.RESET_ALL)
+    elif level == "success":
+        print(Fore.GREEN 
+            + str(datetime.now()) 
+            + " [SUCCESS] " 
+            + str(message) 
+            + Style.RESET_ALL)

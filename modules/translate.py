@@ -58,3 +58,5 @@ def translate(input, output, lang):
             printMessage("error", str(e))
         finally:
             srcFile.close()
+
+    printMessage("success", "Successfully translated " + input + " into " + output)

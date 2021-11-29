@@ -54,7 +54,8 @@ if not check_tor():
         if answer=='n':
                 exit(1)
 else:
-        printMessage("debug", "Tor check successful!")
+        printMessage("success", "Tor check successful!")
 
 # Translating
+printMessage("debug", "Starting translation...")
 translate(args.input, args.output, args.language)

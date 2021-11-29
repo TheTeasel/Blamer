@@ -2,6 +2,7 @@ import argparse
 import sys
 from colorama import Fore, Style
 from translate import translate
+from tor import init_tor
 
 header = Fore.YELLOW + """
 __________.__                               
@@ -28,11 +29,25 @@ parser.add_argument("-o", "--output",
                     dest="output",
                     required=True)
 
-parser.add_argument("-d", "--destination",
+parser.add_argument("-l", "--language",
                     help="Destination language",
-                    dest="destination",
+                    dest="language",
                     required=True)
+
+parser.add_argument("-a", "--anonymous",
+                    help="Anonymous translation using Tor",
+                    action="store_true")
 
 args = parser.parse_args()
 
-translate(args.input, args.output, args.destination)
+if args.anonymous:
+        print("Check anonymity before scraping...")
+        
+        if not init_tor():
+                print("Tor check failed!")
+                exit(1)
+        else:
+                print("Tor check successful!")
+
+
+translate(args.input, args.output, args.language)

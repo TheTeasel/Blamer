@@ -49,7 +49,7 @@ What about this comment ?
 */
 ```
 
-After running `python3 blamer.py -i someFile.cpp -o myResult.cpp -d ru` all comments will be translated to russian and the result is:
+After running `python3 blamer.py -i someFile.cpp -l ru` all comments will be translated to russian and the result is:
 
 ```
 // Это комментарий

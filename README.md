@@ -20,7 +20,7 @@ With Blamer you can release your malware into the wild while blaming another cou
 
 
 # Roadmap
-* Configuration of other characters to define comments. For example, `#` and `"""` for Python code.
+* Because I am very efficient, the roadmap is finished and I need to find new features to add or improve.
 
 
 # Requirements

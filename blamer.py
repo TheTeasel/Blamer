@@ -1,4 +1,5 @@
 import argparse
+import os
 from colorama import Fore, Style
 from modules.translate import translate
 from modules.tor import check_tor
@@ -24,14 +25,13 @@ parser.add_argument("-it", "--ignoreTor",
                         help="ignore the tor warning message",
                         action="store_true")
 
+parser.add_argument("-o", "--output",
+                        help="result file in which Blamer will write the result",
+                        dest="output")
+
 required_args.add_argument("-i", "--input",
                         help="file in which Blamer is going to search for comments to translate",
                         dest="input",
-                        required=True)
-                    
-required_args.add_argument("-o", "--output",
-                        help="result file in which Blamer will write the result",
-                        dest="output",
                         required=True)
 
 required_args.add_argument("-l", "--language",
@@ -66,4 +66,10 @@ else:
 
 # Translating
 printMessage("debug", "Starting translation...")
-translate(args.input, args.output, args.language)
+
+# If there is no output specified
+outputFile = "outputs/" + os.path.basename(args.input)
+if args.output:
+        outputFile = args.output
+
+translate(args.input, outputFile, args.language)

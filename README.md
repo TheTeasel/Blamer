@@ -73,6 +73,7 @@ You can find a list of all supported languages there: https://github.com/TheTeas
 
 
 # Configuration
+## Add more languages
 Blamer is shipped with a configuration file to help during comment extraction. This file contains the regex that will be used to extract comments for specified files extensions. By default, Blamer is expecting multi-line comments to start with `/*` and to end with `*/` and single-line comments to start with `//`. There is, however, another configuration for Python files to use `'''` for multi-line comments and `#` for single-line comments.
 
 This is a preview of the default configuration:
@@ -91,6 +92,14 @@ default:  '(^)?[^\S\n]*\/(?:\*(.*?)\*\/[^\S\n]*|\/[^\n]*)($)?'
 ```
 
 To add a new file type to the configuration, you can add it to the file by giving it's extension as the key (as shown above with `.py`).
+
+
+## Anonymize
+In the `bash_tools` directory you will find two scripts to help you anonymize your traffic.
+
+`anonymize.sh`: Verify if the torsock package is installed and then start it.
+
+`de-anonymize.sh`: Stop the torsock module.
 
 <hr>
 

@@ -6,10 +6,6 @@
   Blamer is an obfuscation code tool designed to translate all comments in your code. This is very useful if you want to deploy your malicious scripts into the wild and blame another country for it.
 </p>
 
-<p align="center">
-  :warning: Blamer is still under development :warning:
-</p>
-
 <hr>
 
 
@@ -49,7 +45,7 @@ What about this comment ?
 */
 ```
 
-After running `python3 blamer.py -i someFile.cpp -o myResult.cpp -d ru` all comments will be translated to russian and the result is:
+After running `python3 blamer.py -i someFile.cpp -l ru` all comments will be translated to russian and the result is:
 
 ```
 // Это комментарий

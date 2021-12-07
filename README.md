@@ -6,10 +6,6 @@
   Blamer is an obfuscation code tool designed to translate all comments in your code. This is very useful if you want to deploy your malicious scripts into the wild and blame another country for it.
 </p>
 
-<p align="center">
-  :warning: Blamer is still under development :warning:
-</p>
-
 <hr>
 
 

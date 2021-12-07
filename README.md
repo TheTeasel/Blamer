@@ -93,9 +93,9 @@ To add a new file type to the configuration, you can add it to the file by givin
 ## Anonymize
 In the `bash_tools` directory you will find two scripts to help you anonymize your traffic.
 
-**anonymize.sh**: Verify if the torsock package is installed and then start it.
+**anonymize.sh**: Verify if the torsocks package is installed and then start it.
 
-**de-anonymize.sh**: Stop the torsock module.
+**de-anonymize.sh**: Stop the torsocks module.
 
 <hr>
 

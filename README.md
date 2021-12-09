@@ -24,7 +24,35 @@ To use Blamer, you'll need additional libraries. You can install them by typing 
 
 
 # Usage
-You can type `python3 blamer.py -h` in order to get help about how to use Blamer. 
+You can type `python3 blamer.py -h` in order to get help about how to use Blamer.
+
+```
+
+__________.__                               
+\______   \  | _____    _____   ___________ 
+ |    |  _/  | \__  \  /     \_/ __ \_  __ \
+ |    |   \  |__/ __ \|  Y Y  \  ___/|  | \/
+ |______  /____(____  /__|_|  /\___  >__|      by Teasel
+        \/          \/      \/     \/       
+
+usage: blamer.py [-h] [-it] [-o OUTPUT] -i INPUT -l LANGUAGE
+
+Control script for Blamer.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -it, --ignoreTor      ignore the tor warning message
+  -o OUTPUT, --output OUTPUT
+                        result file in which Blamer will write the result
+
+required arguments:
+  -i INPUT, --input INPUT
+                        file in which Blamer is going to search for comments
+                        to translate
+  -l LANGUAGE, --language LANGUAGE
+                        language in which to translate the comments
+
+```
 
 To show you a concrete example of what you can do with Blamer, let's take this initial piece of code:
 ```
